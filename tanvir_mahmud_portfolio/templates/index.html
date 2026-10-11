@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071510">
+  <meta name="description" content="Tanvir Mahmud is a digital marketer helping businesses grow through social media marketing, paid ads, SEO, and content strategy.">
+  <title>Tanvir Mahmud | Digital Marketer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Tanvir Mahmud home"><span class="brand-mark">T<span>M</span></span><span>Tanvir Mahmud<small>Digital Marketer</small></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#results">Experience</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="button button-small header-cta" href="#contact">Let's talk <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> DIGITAL MARKETING • GROWTH STRATEGY</div>
+        <h1>Let's turn your<br>ideas into <span class="gradient-text">growth.</span></h1>
+        <p class="hero-subtitle">Hey, I'm <strong>Tanvir Mahmud</strong> — a digital marketer helping brands get noticed, reach the right people, and grow online.</p>
+        <p class="hero-detail">With 6+ months of hands-on experience, I'm currently working with 2 clients and have provided services to 17+ clients.</p>
+        <div class="hero-actions"><a class="button" href="#contact">Work with me <span>↗</span></a><a class="button button-ghost" href="#services">Explore services <span>↓</span></a></div>
+        <div class="social-proof"><div class="mini-avatars"><span>T</span><span>M</span><span>+</span></div><p><strong>17+ clients served</strong><br><small>Focused on practical, measurable growth</small></p></div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="portrait-halo"></div><div class="portrait-frame"><img src="{{ url_for('static', filename='images/tanvir.png') }}" alt="Portrait of Tanvir Mahmud"></div>
+        <div class="floating-card card-top"><span class="float-icon">↗</span><div><strong>Growth-minded</strong><small>Strategy first</small></div></div>
+        <div class="floating-card card-bottom"><span class="pulse-bars"><i></i><i></i><i></i><i></i></span><div><strong>Digital presence</strong><small>Built with purpose</small></div></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="visual-tag">YOUR NEXT GROWTH PARTNER</span>
+      </div>
+      <a class="scroll-cue" href="#results"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="stats section-wrap" id="results">
+      <div class="stat"><span class="stat-number" data-count="6">6+</span><span class="stat-label">Months experience</span></div>
+      <div class="stat"><span class="stat-number" data-count="2">2</span><span class="stat-label">Current clients</span></div>
+      <div class="stat"><span class="stat-number" data-count="17">17+</span><span class="stat-label">Clients served</span></div>
+      <div class="stat stat-note"><span class="stat-symbol">✳</span><div><strong>Small details. Smart strategy.</strong><span class="stat-label">A thoughtful approach to every project.</span></div></div>
+    </section>
+
+    <section class="about section-wrap section-space" id="about">
+      <div class="section-kicker">01 / ABOUT ME</div>
+      <div class="section-heading"><h2>Curious mind.<br><span class="muted">Growth-focused marketer.</span></h2><p>I believe good marketing starts with understanding people — then combining creativity, data, and consistency to help a business move forward.</p></div>
+      <div class="about-grid">
+        <div class="about-note"><span class="quote-mark">“</span><p>My goal isn't just to make your brand visible. It's to help the right people understand why your business matters.</p><span class="signature">— Tanvir Mahmud</span></div>
+        <div class="principles">
+          <article class="principle"><span class="principle-icon">01</span><div><h3>Strategy before spending</h3><p>Clear goals and audience research before choosing tactics.</p></div></article>
+          <article class="principle"><span class="principle-icon">02</span><div><h3>Creative that connects</h3><p>Relevant messages and content designed around real people.</p></div></article>
+          <article class="principle"><span class="principle-icon">03</span><div><h3>Learn, measure, improve</h3><p>Use performance insights to guide the next decision.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-space" id="services"><div class="section-wrap">
+      <div class="section-kicker">02 / WHAT I DO</div><div class="section-heading"><h2>Services built for<br><span class="muted">your next step.</span></h2><p>Flexible digital marketing support for businesses that want to build a stronger online presence.</p></div>
+      <div class="service-grid">{% for service in services %}<article class="service-card"><div class="service-top"><span class="service-icon">{{ service.icon }}</span><span class="service-arrow">↗</span></div><h3>{{ service.title }}</h3><p>{{ service.desc }}</p><a href="#contact" aria-label="Ask about {{ service.title }}">Discuss this service <span>→</span></a></article>{% endfor %}</div>
+    </div></section>
+
+    <section class="process section-wrap section-space"><div class="section-kicker">03 / HOW I WORK</div><div class="section-heading"><h2>Simple process.<br><span class="muted">Clear communication.</span></h2><p>Every business is different. Here's how we'll approach your project together.</p></div>
+      <div class="process-grid"><article><span>01</span><h3>Discover</h3><p>Talk about your business, audience, goals, and current challenges.</p></article><article><span>02</span><h3>Plan</h3><p>Choose a practical strategy and agree on deliverables and priorities.</p></article><article><span>03</span><h3>Execute</h3><p>Launch the agreed work with care, consistency, and communication.</p></article><article><span>04</span><h3>Improve</h3><p>Review available data and identify what to test or improve next.</p></article></div>
+    </section>
+
+    <section class="contact-section section-space" id="contact"><div class="section-wrap contact-grid"><div class="contact-copy"><div class="section-kicker">04 / LET'S CONNECT</div><h2>Have a project<br>in <span class="gradient-text">mind?</span></h2><p>Tell me what you're building and what you'd like to achieve. Let's see how digital marketing can help.</p><div class="contact-detail"><span class="contact-detail-icon">✉</span><div><small>GET IN TOUCH</small><strong>Send a project inquiry</strong></div></div><div class="contact-detail"><span class="contact-detail-icon">◷</span><div><small>RESPONSE</small><strong>I'll get back to you as soon as I can</strong></div></div></div>
+      <form class="contact-form" method="POST" action="#contact"><h3>Let's talk business.</h3><p>Share a few details to get started.</p>
+        {% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}{% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}{% endif %}{% endwith %}
+        <label for="name">Your name</label><input id="name" name="name" type="text" placeholder="e.g. Alex Morgan" required maxlength="120">
+        <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required maxlength="180">
+        <label for="service">What do you need help with?</label><select id="service" name="service"><option value="">Choose a service (optional)</option>{% for service in services %}<option>{{ service.title }}</option>{% endfor %}<option>Something else</option></select>
+        <label for="message">Tell me about your project</label><textarea id="message" name="message" rows="4" placeholder="Your goals, business, timeline..." required maxlength="5000"></textarea>
+        <button class="button submit-button" type="submit">Send inquiry <span>↗</span></button><small class="form-note">Your message is stored securely in the website database.</small>
+      </form>
+    </div></section>
+  </main>
+  <footer class="footer"><div class="section-wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark">T<span>M</span></span><span>Tanvir Mahmud<small>Digital Marketer</small></span></a><p>Building better digital connections, one strategy at a time.</p><a href="#home" class="back-top">Back to top ↑</a><div class="copyright">© <span id="year"></span> Tanvir Mahmud. Made with purpose.</div></div></footer>
+</body>
+</html>
